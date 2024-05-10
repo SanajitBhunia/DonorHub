@@ -1,0 +1,177 @@
+<resources>
+    <string name="maps_api">AIzaSyAC2BTVrrob8t5HyrYEnFV-VYl3TbQHJyc</string>
+    <string name="app_name">DonorHub</string>
+
+    <string-array name="Blood">
+        <item>Select Blood Group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+
+    </string-array>
+
+    <string-array name="Division">
+        <item>Select Division</item>
+        <item>Presidency</item>
+        <item>Medinipur</item>
+        <item>Burdwan</item>
+        <item>Malda</item>
+        <item>Jalpaiguri</item>
+
+    </string-array>
+
+    <string-array name="Districts">
+        <item>Select Districts</item>
+        <item>Howrah</item>
+        <item>Kolkata</item>
+        <item>Nadia</item>
+        <item>North 24 Parganas</item>
+        <item>South 24 Parganas</item>
+        <item>Bankura</item>
+        <item>Jhargham</item>
+        <item>Paschim Medinipur</item>
+        <item>Purba Medinipur</item>
+        <item>Purulia</item>
+        <item>Birbhum</item>
+        <item>Paschim Bardhaman</item>
+        <item>Purba Bardhaman</item>
+        <item>Hoogly</item>
+        <item>Dakshin Dinajpur</item>
+        <item>Malda</item>
+        <item>Murshidabad</item>
+        <item>Uttar Dinajpur</item>
+        <item>Alipurduar</item>
+        <item>Cooch Behar</item>
+        <item>Darjeeling</item>
+        <item>Jalpaiguri</item>
+        <item>Kalimpong</item>
+
+    </string-array>
+    <string-array name="blood_donation_quotes">
+        <item>"The blood you donate gives someone another chance at life."</item>
+        <item>"A life may depend on a gesture from you, a bottle of Blood."</item>
+        <item>"Your blood donation can save a life, or even several."</item>
+        <item>"Every blood donor is a hero."</item>
+        <item>"Donate your blood for a reason, let the reason to be life."</item>
+        <item>"To give blood you need neither extra strength nor extra food, and you will save a life."</item>
+        <item>"A single pint can save three lives, a single gesture can create a million smiles."</item>
+        <item>"The blood you donate gives someone another chance at life."</item>
+        <item>"Don't wait until disaster strikes to give blood."</item>
+        <item>"Blood donation is the real act of humanity."</item>
+        <item>"The best blood will at some time get into a fool or a mosquito."</item>
+        <item>"The blood is red gold in time of saving a life."</item>
+        <item>"There is no great joy than saving a soul."</item>
+        <item>"Heroes come in all types and sizes."</item>
+        <item>"You're somebody's type, give blood."</item>
+        <item>"The blood is red gold in time of saving a life."</item>
+        <item>"There is no great joy than saving a soul." </item>
+        <item>"Heroes come in all types and sizes."</item>
+        <item>"You're somebody's type, give blood."</item>
+        <item>"Blood donation is the real act of humanity."</item>
+        <item>"The best blood will at some time get into a fool or a mosquito."</item>
+        <item>"Donate blood and be the reason of smile to many faces."</item>
+        <item>"The blood you donate gives someone another chance at life." </item>
+        <item>"Blood donation will cost you nothing but it will save a life!" </item>
+        <item>"Your blood is replaceable. A life is not." </item>
+        <item>"One day, I'll be gone. But my truth will live on: Give."</item>
+        <item>"The blood is red gold in time of saving a life." </item>
+        <item>"There is no great joy than saving a soul." </item>
+        <item>"Heroes come in all types and sizes." </item>
+        <item>"You're somebody's type, give blood." </item>
+        <item>"Blood donation is the real act of humanity." </item>
+        <item>"The best blood will at some time get into a fool or a mosquito." </item>
+        <item>"Donate blood and be the reason of smile to many faces." </item>
+        <item>"The blood you donate gives someone another chance at life." </item>
+        <item>"Blood donation will cost you nothing but it will save a life!" </item>
+        <item>"Your blood is replaceable. A life is not."</item>
+        <item>"One day, I'll be gone. But my truth will live on: Give."</item>
+        <item>"You don’t have to be a doctor to save lives, just donate blood."</item>
+        <item>"Blood donation is the real act of humanity." </item>
+        <item>"Share a little, care a little – Donate Blood." </item>
+        <item>"The blood you donate gives someone another chance at life." </item>
+        <item>"To the young and healthy, it’s no loss. To sick, it’s hope of life." </item>
+        <item>"Blood donors are the silent heroes, saving lives with their gifts." </item>
+        <item>"Your blood donation can give a precious smile to someone’s face."</item>
+        <item>"Blood donation is the real act of humanity." </item>
+        <item>"A life may depend on a gesture from you, a bottle of Blood."</item>
+        <item>"The blood you donate gives someone another chance at life."</item>
+        <item>"Donate blood and be the reason of smile to many faces." </item>
+        <item>"The blood you donate gives someone another chance at life." </item>
+        <item>"Blood donation is the real act of humanity."</item>
+        <item>"Share a little, care a little – Donate Blood." </item>
+        <item>"To the young and healthy, it’s no loss. To sick, it’s hope of life."</item>
+        <item>"Blood donors are the silent heroes, saving lives with their gifts."</item>
+        <item>"Your blood donation can give a precious smile to someone’s face."</item>
+        <item>"Donate blood, save lives."</item>
+        <item>"Be a hero, donate blood."</item>
+        <item>"Your blood donation matters."</item>
+        <item>"Give blood, give life."</item>
+        <item>"Every drop counts."</item>
+        <item>"Make a difference, donate blood."</item>
+        <item>"Be someone's hero today."</item>
+        <item>"Share life, give blood."</item>
+        <item>"Donate blood and be proud."</item>
+        <item>"Saving lives one donation at a time."</item>
+        <item>"Be the reason someone smiles today."</item>
+        <item>"Your donation can heal."</item>
+        <item>"Give blood, give love."</item>
+        <item>"Donate blood, share hope."</item>
+        <item>"A small act can have a big impact."</item>
+        <item>"Be a lifesaver, donate blood."</item>
+        <item>"Be kind, donate blood."</item>
+        <item>"Be bold, donate blood."</item>
+        <item>"Your blood is precious, share it."</item>
+        <item>"Give blood, give back."</item>
+        <item>"Donate blood for a brighter tomorrow."</item>
+        <item>"One donation can save multiple lives."</item>
+        <item>"Be generous, donate blood."</item>
+        <item>"Blood donors are silent heroes."</item>
+        <item>"The gift of blood is the gift of life."</item>
+        <item>"A single donation can make a big difference."</item>
+        <item>"Blood donors are life savers."</item>
+        <item>"Give blood, give hope."</item>
+        <item>"Save a life, donate blood."</item>
+        <item>"Be a part of the life-saving team."</item>
+        <item>"Your blood can be someone's lifeline."</item>
+        <item>"Donating blood is giving love."</item>
+        <item>"Share your strength, donate blood."</item>
+        <item>"Be brave, donate blood."</item>
+        <item>"Be a donor, be a hero."</item>
+        <item>"Every drop of blood makes a difference."</item>
+        <item>"Make a positive impact, donate blood."</item>
+        <item>"Your blood is needed now more than ever."</item>
+        <item>"Be selfless, donate blood."</item>
+        <item>"Give blood, give hope to the hopeless."</item>
+        <item>"Donating blood is a gift of kindness."</item>
+        <item>"Helping others is in your blood."</item>
+        <item>"Be a part of something bigger, donate blood."</item>
+        <item>"Be proud, be a blood donor."</item>
+        <item>"Your blood donation can light up someone's life."</item>
+        <item>"Be a lifesaver, donate blood today."</item>
+        <item>"Share the love, donate blood."</item>
+        <item>"Blood donation is a noble act."</item>
+        <item>"Be a ray of hope, donate blood."</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="we_have_verification_code_to">We have send verification code to</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="resend_code">Resend Code!!</string>
+    <string name="have_not_received_yet">Have not received yet?</string>
+    <string name="enter_the_otp">Enter the OTP</string>
+<!--    <string name="verify">VERIFY</string>-->
+<!--    <string name="verified_text">VERIFIED</string>-->
+
+
+
+</resources>
