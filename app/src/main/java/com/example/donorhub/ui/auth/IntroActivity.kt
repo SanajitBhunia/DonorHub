@@ -9,10 +9,9 @@ import android.os.Handler
 import android.os.Looper
 import com.example.donorhub.R
 import com.example.donorhub.databinding.ActivityIntroBinding
-import com.example.donorhub.ui.MainActivity
 
 
-class introActivity : AppCompatActivity() {
+class IntroActivity : AppCompatActivity() {
     lateinit var binding: ActivityIntroBinding
     private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +23,7 @@ class introActivity : AppCompatActivity() {
 
         displayRandomQuote()
         Handler(Looper.myLooper()!!).postDelayed({
-            startActivity(Intent(this,MainActivity::class.java ))
+            startActivity(Intent(this,Donor_receiver_activity::class.java ))
             finish()
         },4000)
 

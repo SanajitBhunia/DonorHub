@@ -10,7 +10,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.donorhub.R
 import com.example.donorhub.ui.auth.LoginActivity
-import com.example.donorhub.ui.auth.introActivity
+import com.example.donorhub.ui.auth.IntroActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashScreen : AppCompatActivity() {
@@ -43,7 +43,7 @@ class SplashScreen : AppCompatActivity() {
 
                 TaskStackBuilder.create(this)
                     .addNextIntentWithParentStack(Intent(this, MainActivity::class.java))
-                    .addNextIntent(Intent(this, introActivity::class.java))
+                    .addNextIntent(Intent(this, IntroActivity::class.java))
                     .startActivities()
             }
 

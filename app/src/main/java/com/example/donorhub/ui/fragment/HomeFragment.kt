@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
 
             override fun afterTextChanged(s: Editable?) {
 
-                searchText = s.toString().toLowerCase()
+                searchText = s.toString().lowercase()
 
                 updateRecylerView()
             }

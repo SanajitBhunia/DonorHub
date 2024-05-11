@@ -31,11 +31,6 @@ class DeveloperActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-//        binding.RLCompanyInfo3.setOnClickListener {
-//            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://developer-alamin.web.app/"))
-//            startActivity(i)
-//
-//        }
     }
+
 }
