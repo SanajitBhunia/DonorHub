@@ -16,7 +16,7 @@ class Donor_receiver_activity : AppCompatActivity() {
         binding=ActivityDonorReceiverBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-        auth=FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
 
 
             binding.btndonate.setOnClickListener {
@@ -27,6 +27,9 @@ class Donor_receiver_activity : AppCompatActivity() {
                     startActivity(Intent(this, LoginActivity::class.java))
                 }
             }
+        binding.btnrequest.setOnClickListener {
+            startActivity(Intent(this,BloodRequest::class.java))
+        }
 
     }
 }

@@ -43,6 +43,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ui.auth.BloodRequest"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.auth.PatientsDetails"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.auth.OTPActivity"
             android:exported="false">
             <meta-data

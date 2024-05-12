@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/patientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter patient's name "
+                android:inputType="text"/>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contactNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Contact Number"
+                android:inputType="number"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/patientAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:inputType="number"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginVertical="8dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="c"
+                android:background="@android:drawable/btn_dropdown"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <Spinner
+                android:id="@+id/spinnerBlood"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginVertical="8dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="c"
+                android:background="@android:drawable/btn_dropdown"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+            <Spinner
+                android:id="@+id/spinnerBloodUnit"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginVertical="8dp"
+                android:layout_marginEnd="10dp"
+                android:autofillHints="c"
+                android:background="@android:drawable/btn_dropdown"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+
+
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/HospitaName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter hospital name "
+                android:inputType="text"/>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hospitalAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter hospital adress "
+                android:lines="2"
+                android:inputType="textMultiLine"
+                android:gravity="top"/>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/spinnerPatientDivsion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/spinnerPatientDistricts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+        <Spinner
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/spinnerReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Comments "
+                android:lines="2"
+                android:inputType="textMultiLine"
+                android:gravity="top"/>
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_bg"
+            android:text="Post"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</ScrollView>
