@@ -6,10 +6,10 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/searchDonor"
         android:name="com.example.donorhub.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/blood_request" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.donorhub.ui.fragment.ProfileFragment"
