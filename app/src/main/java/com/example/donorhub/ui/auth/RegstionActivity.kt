@@ -36,7 +36,7 @@ class RegstionActivity : AppCompatActivity() {
     lateinit var blood: String
     lateinit var division: String
     lateinit var districts: String
-    lateinit var role:String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -171,9 +171,7 @@ class RegstionActivity : AppCompatActivity() {
             } else if (password.isEmpty()) {
                 binding.userPassword.setError("Please Enter your Password")
                 binding.userPassword.requestFocus()
-            } else if(role.equals("Are you a..")){
-                Toast.makeText(this, "Please specify Are yoa a DONOR or RECEIVER", Toast.LENGTH_SHORT).show()
-            } else if (blood.equals("Select Blood Group")) {
+            }  else if (blood.equals("Select Blood Group")) {
                 Toast.makeText(this, "Please Provide Blood Group", Toast.LENGTH_SHORT).show()
             } else if (division.equals("Select Division")) {
                 Toast.makeText(this, "Please Provide Division", Toast.LENGTH_SHORT).show()
