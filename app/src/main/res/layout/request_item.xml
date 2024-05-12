@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/lightRed"
+    android:layout_margin="4dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="7dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/bloodGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="Blood Group"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <com.airbnb.lottie.LottieAnimationView
+
+                android:id="@+id/animationView"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:lottie_autoPlay="true"
+                android:layout_marginStart="30dp"
+                app:lottie_fileName="call.json"
+                app:lottie_loop="true" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp">
+            <ImageButton
+                android:id="@+id/patientsDetails"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_location"
+                android:backgroundTint="@color/white"/>
+
+            <TextView
+                android:id="@+id/hospitalName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hospital Name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginStart="7dp"/>
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp">
+
+          <ImageView
+              android:layout_marginTop="10dp"
+              android:layout_width="30dp"
+              android:layout_height="30dp"
+              android:background="@drawable/schedule"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/posted_on"
+                android:layout_marginStart="3dp"/>
+            <TextView
+                android:id="@+id/postedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posted Date"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"/>
+
+                <Button
+                    android:id="@+id/donatebtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:text="Donate"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/green"
+
+                    />
+
+
+
+
+
+
+        </LinearLayout>
+
+
+        
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -169,6 +169,7 @@
     <string name="resend_code">Resend Code!!</string>
     <string name="have_not_received_yet">Have not received yet?</string>
     <string name="enter_the_otp">Enter the OTP</string>
+    <string name="posted_on">Posted on</string>
     <!--    <string name="verify">VERIFY</string>-->
     <!--    <string name="verified_text">VERIFIED</string>-->
 
