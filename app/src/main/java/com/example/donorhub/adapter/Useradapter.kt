@@ -36,7 +36,7 @@ class Useradapter(val context: HomeFragment, var list: ArrayList<UserModel>) :
         holder.binding.userDivision.text = list[position].division.toString()
         holder.binding.userDistrict.text = list[position].district.toString()
         holder.binding.userPhone.text = list[position].phone.toString()
-        holder.binding.userRole.text=list[position].role.toString()
+
 
         holder.binding.animationView.setOnClickListener {
             val phone = list[position].phone.toString()

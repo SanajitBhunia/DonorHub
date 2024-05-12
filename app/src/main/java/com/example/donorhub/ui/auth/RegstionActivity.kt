@@ -93,27 +93,7 @@ class RegstionActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         })
-        val item2= arrayOf("Are you a..","DONOR","RECEIVER")
-        binding.spinnerrole.setAdapter(
-            ArrayAdapter(
-                this,
-                android.R.layout.simple_spinner_dropdown_item,
-                item2
-            )
-        )
-        binding.spinnerrole.setOnItemSelectedListener(object :
-            AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                role = binding.spinnerrole.getSelectedItem().toString()
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        })
 
 
         val items = AddressUtils.getDivisions()
@@ -209,7 +189,6 @@ class RegstionActivity : AppCompatActivity() {
                             currentUserId,
                             name,
                             phone,
-                            role,
                             blood,
                             division,
                             districts,
