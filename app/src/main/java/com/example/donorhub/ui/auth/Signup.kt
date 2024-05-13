@@ -6,15 +6,18 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.donorhub.databinding.SiginUpBinding
+import com.example.donorhub.model.DonorModel
 import com.example.donorhub.ui.MainActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Signup:AppCompatActivity() {
 
     lateinit var binding: SiginUpBinding
     private lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +30,20 @@ class Signup:AppCompatActivity() {
             startActivity(Intent(this,LoginActivity::class.java))
         }
 
+
+        // [START on_start_check_user]
+            // Check if user is signed in (non-null) and update UI accordingly.
+            val currentUser = auth.currentUser
+            if (currentUser != null) {
+                startActivity(Intent(this,Donor_receiver_activity::class.java))
+            }
+
+
         binding.signup.setOnClickListener {
+
             val email=binding.useremail.text.toString()
             val password=binding.userPassword.text.toString()
+
             if(email.isEmpty()){
                 binding.useremail.setError("Invalid Email Address")
                 binding.useremail.requestFocus()
@@ -49,6 +63,7 @@ class Signup:AppCompatActivity() {
     }
 
     private fun CreateUser() {
+
         val email = binding.useremail.text.toString()
         val password = binding.userPassword.text.toString()
 
@@ -56,8 +71,10 @@ class Signup:AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+
                     Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, Donor_receiver_activity::class.java))
+                    intent.putExtra("password", password)
                     finish()
 
                 } else {
@@ -68,6 +85,7 @@ class Signup:AppCompatActivity() {
                 }
             }
     }
+
 
 
 }

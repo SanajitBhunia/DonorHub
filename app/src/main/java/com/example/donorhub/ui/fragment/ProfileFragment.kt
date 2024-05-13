@@ -37,7 +37,7 @@ class ProfileFragment : Fragment() {
 
         Config.showDialog(requireContext())
 
-        db.collection("users").document(currentUserId).get()
+        db.collection("Donor").document(currentUserId).get()
             .addOnSuccessListener { result ->
 
                 currUser = result.toObject(DonorModel::class.java)!!

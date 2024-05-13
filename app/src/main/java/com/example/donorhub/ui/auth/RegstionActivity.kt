@@ -10,17 +10,20 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.donorhub.model.DonorModel
 import com.example.donorhub.databinding.ActivityRegstionBinding
+import com.example.donorhub.databinding.SiginUpBinding
 
 import com.example.donorhub.ui.MainActivity
 import com.example.donorhub.utils.AddressUtils
 import com.example.donorhub.utils.Config
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 
 
 class RegstionActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityRegstionBinding
+    lateinit var binding1: SiginUpBinding
 
 
     lateinit var db: FirebaseFirestore
@@ -40,9 +43,10 @@ class RegstionActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        binding.userLogin.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
+        binding1= SiginUpBinding.inflate(layoutInflater)
+        val currentUser = auth.currentUser
+
+
         binding.verifyBtn1.setOnClickListener {
             val phone = binding.userPhone.text!!.toString()
             if(phone.isEmpty()) {
@@ -141,30 +145,23 @@ class RegstionActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         })
 
-        binding.signIn.setOnClickListener {
+        binding.saveBtn.setOnClickListener {
 
-            val name = binding.userName.text.toString()
+
             val phone = binding.userPhone.text.toString()
-            val email = binding.userEmail.text.toString()
-            val password = binding.userPassword.text.toString()
+            val name=binding.userName.text.toString()
 
-            if (name.isEmpty()) {
-                binding.userName.setError("Please Enter your Name")
-                binding.userName.requestFocus()
+            if(name.isEmpty()){
+                    binding.userName.setError("Please enter name")
+                    binding.userName.requestFocus()
             } else if (phone.isEmpty()) {
                 binding.userPhone.setError("Please Enter your Phone")
                 binding.userPhone.requestFocus()
             }  else if(phone.length!=10) {
                 binding.userPhone.setError("Number must be 10 digit")
                 binding.userPhone.requestFocus()
-
-            } else if (email.isEmpty()) {
-                binding.userEmail.setError("Please Enter your Email")
-                binding.userEmail.requestFocus()
-            } else if (password.isEmpty()) {
-                binding.userPassword.setError("Please Enter your Password")
-                binding.userPassword.requestFocus()
-            }  else if (blood.equals("Select Blood Group")) {
+            }
+                else if (blood.equals("Select Blood Group")) {
                 Toast.makeText(this, "Please Provide Blood Group", Toast.LENGTH_SHORT).show()
             } else if (division.equals("Select Division")) {
                 Toast.makeText(this, "Please Provide Division", Toast.LENGTH_SHORT).show()
@@ -172,33 +169,42 @@ class RegstionActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please Provide District", Toast.LENGTH_SHORT).show()
             } else {
 
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Config.showDialog(this)
-                        val currentUserId = auth.currentUser!!.uid
-                        val data = DonorModel(
-                            currentUserId,
-                            name,
-                            phone,
-                            blood,
-                            division,
-                            districts,
-                            email,
-                            password
-                        )
 
-                        db.collection("users").document(currentUserId).set(data)
+                    val currentUserId = auth.currentUser!!.uid
+                   val password = intent.getStringExtra("password")
+
+
+
+                 // Create a data object with user information
+                    val data = DonorModel(
+                        currentUserId,
+                        name,
+                        phone,
+                        blood,
+                        division,
+                        districts,
+                        email = auth.currentUser!!.email ?: "",
+                        password=password
+                    )
+
+                        db.collection("Donor").document(currentUserId).set(data,SetOptions.merge())
                             .addOnCompleteListener {
-                                startActivity(Intent(this, MainActivity::class.java))
-                                finish()
-                                Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+                                if(it.isSuccessful) {
+                                    startActivity(Intent(this, MainActivity::class.java))
+                                    finish()
+                                    Toast.makeText(
+                                        this,
+                                        "Data Saved Successful",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                                else{
+                                    Config.hideDialog()
+                                    Toast.makeText(this, "Unknown Error!! Please try again", Toast.LENGTH_SHORT).show()
+                                }
                             }
-                    } else {
-                        Config.hideDialog()
-                        Toast.makeText(this, it.exception!!.message, Toast.LENGTH_SHORT).show()
-                        Toast.makeText(this, "Registration UnSuccessful", Toast.LENGTH_SHORT).show()
-                    }
-                }
+
+
             }
 
         }

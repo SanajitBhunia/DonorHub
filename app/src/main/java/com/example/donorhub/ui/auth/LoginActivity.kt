@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.userRegistion.setOnClickListener {
-            startActivity(Intent(this, RegstionActivity::class.java))
+            startActivity(Intent(this, Signup::class.java))
         }
 
         binding.signIn.setOnClickListener {
