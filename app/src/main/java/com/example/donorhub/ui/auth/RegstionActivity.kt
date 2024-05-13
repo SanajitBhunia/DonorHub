@@ -1,27 +1,20 @@
 package com.example.donorhub.ui.auth
 
 
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.donorhub.R
-import com.example.donorhub.model.UserModel
+import com.example.donorhub.model.DonorModel
 import com.example.donorhub.databinding.ActivityRegstionBinding
 
 import com.example.donorhub.ui.MainActivity
 import com.example.donorhub.utils.AddressUtils
 import com.example.donorhub.utils.Config
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.collection.LLRBNode.Color
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -183,7 +176,7 @@ class RegstionActivity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         Config.showDialog(this)
                         val currentUserId = auth.currentUser!!.uid
-                        val data = UserModel(
+                        val data = DonorModel(
                             currentUserId,
                             name,
                             phone,

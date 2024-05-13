@@ -1,6 +1,6 @@
 package com.example.donorhub.model
 
-data class UserModel(
+data class DonorModel(
     val id: String? = "",
     val name: String? = "",
     val phone: String? = "",

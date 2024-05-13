@@ -11,6 +11,7 @@ import android.os.Looper
 import com.example.donorhub.R
 import com.example.donorhub.ui.auth.LoginActivity
 import com.example.donorhub.ui.auth.IntroActivity
+import com.example.donorhub.ui.auth.Signup
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashScreen : AppCompatActivity() {
