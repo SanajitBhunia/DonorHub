@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.bottomBar.setupWithNavController(popupMenu.menu, navController)
 
 
+
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             title = when (destination.id) {
                 R.id.homeFragment -> "Home"

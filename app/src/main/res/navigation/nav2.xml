@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav2"
+    app:startDestination="@id/request">
+    <fragment
+        android:id="@+id/request"
+        android:name="com.example.donorhub.ui.fragment.request_fragment"
+        android:label="request fragment"
+        tools:layout="@layout/fragment_request_fragment" />
+    <fragment
+        android:id="@+id/searchdonor"
+        android:name="com.example.donorhub.ui.fragment.search_donor"
+        android:label="search donor fragment"
+        tools:layout="@layout/fragment_search_donor" />
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.example.donorhub.ui.fragment.notification"
+        android:label="Notification fragment"
+        tools:layout="@layout/fragment_notification" />
+
+</navigation>

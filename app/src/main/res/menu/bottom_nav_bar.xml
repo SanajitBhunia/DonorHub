@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item  android:title="MyRequest"
+        android:id="@+id/request"
+        android:icon="@drawable/request"
+        android:enabled="true"
+        app:showAsAction="always"
+        />
+    <item android:title="SearchDonor"
+        android:id="@+id/searchdonor"
+        android:icon="@drawable/search"
+        android:enabled="true"
+        app:showAsAction="always"/>
+    <item android:title="Notification"
+        android:id="@+id/notification"
+        android:icon="@drawable/notif"
+        android:enabled="true"
+        app:showAsAction="always"/>
+</menu>
