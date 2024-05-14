@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         db = FirebaseFirestore.getInstance()
 
         Config.showDialog(requireContext())
-        db.collection("users").addSnapshotListener { value, error ->
+        db.collection("Donor").addSnapshotListener { value, error ->
             val list = arrayListOf<DonorModel>()
             val data = value?.toObjects(DonorModel::class.java)
             list.addAll(data!!)

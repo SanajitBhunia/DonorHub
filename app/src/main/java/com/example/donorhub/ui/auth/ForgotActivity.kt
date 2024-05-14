@@ -29,7 +29,7 @@ class ForgotActivity : AppCompatActivity() {
             val email = binding.userEmail.text.toString()
 
             if (email.isEmpty()) {
-                binding.userEmail.setError("Please Enter you Eamil")
+                binding.userEmail.setError("Please Enter you Email")
                 binding.userEmail.requestFocus()
             } else {
                 auth.sendPasswordResetEmail(email).addOnCompleteListener {
