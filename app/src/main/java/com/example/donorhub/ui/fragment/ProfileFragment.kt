@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.donorhub.databinding.FragmentProfileBinding
-import com.example.donorhub.model.UserModel
+import com.example.donorhub.model.DonorModel
 import com.example.donorhub.utils.Config
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -17,7 +17,7 @@ class ProfileFragment : Fragment() {
     lateinit var binding: FragmentProfileBinding
     lateinit var db: FirebaseFirestore
     lateinit var auth: FirebaseAuth
-    private lateinit var currUser:UserModel
+    private lateinit var currUser:DonorModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,10 +37,10 @@ class ProfileFragment : Fragment() {
 
         Config.showDialog(requireContext())
 
-        db.collection("users").document(currentUserId).get()
+        db.collection("Donor").document(currentUserId).get()
             .addOnSuccessListener { result ->
 
-                currUser = result.toObject(UserModel::class.java)!!
+                currUser = result.toObject(DonorModel::class.java)!!
                 binding.userName.setText(currUser.name.toString())
                 binding.userPhone.setText(currUser.phone.toString())
                 binding.userEmail.setText(currUser.email.toString())

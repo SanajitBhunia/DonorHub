@@ -9,10 +9,10 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.example.donorhub.databinding.ItemUserBinding
-import com.example.donorhub.model.UserModel
+import com.example.donorhub.model.DonorModel
 import com.example.donorhub.ui.fragment.HomeFragment
 
-class Useradapter(val context: HomeFragment, var list: ArrayList<UserModel>) :
+class Useradapter(val context: HomeFragment, var list: ArrayList<DonorModel>) :
     RecyclerView.Adapter<Useradapter.UserViewHolder>() {
 
     class UserViewHolder (val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root){
@@ -24,7 +24,7 @@ class Useradapter(val context: HomeFragment, var list: ArrayList<UserModel>) :
     }
 
 
-    fun updateData(dataItem: ArrayList<UserModel>) {
+    fun updateData(dataItem: ArrayList<DonorModel>) {
         list = dataItem
         notifyDataSetChanged()
     }

@@ -23,7 +23,7 @@ class IntroActivity : AppCompatActivity() {
 
         displayRandomQuote()
         Handler(Looper.myLooper()!!).postDelayed({
-            startActivity(Intent(this,Donor_receiver_activity::class.java ))
+            startActivity(Intent(this,Signup::class.java ))
             finish()
         },4000)
 
