@@ -48,6 +48,8 @@ class PatientsDetails:AppCompatActivity() {
 
 
 
+
+
         val itemGender= arrayOf("Select Gender","Male","Female","Others")
         binding.spinnerGender.setAdapter(
             ArrayAdapter(
