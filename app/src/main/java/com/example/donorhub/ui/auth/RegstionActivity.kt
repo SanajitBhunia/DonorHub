@@ -194,7 +194,7 @@ class RegstionActivity : AppCompatActivity() {
                                     finish()
                                     Toast.makeText(
                                         this,
-                                        "Data Saved Successful",
+                                        "Data Saved SuccessfulLy",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }

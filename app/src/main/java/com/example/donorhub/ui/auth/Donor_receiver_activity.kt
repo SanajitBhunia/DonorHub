@@ -21,12 +21,10 @@ class Donor_receiver_activity : AppCompatActivity() {
 
 
         binding.btndonate.setOnClickListener {
-                if(auth.currentUser!=null){
-                    startActivity(Intent(this, MainActivity::class.java))
-                }
-                else{
-                    startActivity(Intent(this, LoginActivity::class.java))
-                }
+
+                    startActivity(Intent(this, RegstionActivity::class.java))
+
+
         }
         binding.btnrequest.setOnClickListener {
             startActivity(Intent(this,MainActivity2::class.java))
