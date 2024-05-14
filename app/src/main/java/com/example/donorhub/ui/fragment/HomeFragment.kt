@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.donorhub.adapter.Useradapter
+import com.example.donorhub.adapter.Donoradapter
 import com.example.donorhub.databinding.FragmentHomeBinding
 import com.example.donorhub.model.DonorModel
 import com.example.donorhub.utils.Config
@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
     lateinit var db: FirebaseFirestore
 
     private lateinit var list: ArrayList<DonorModel>
-    private lateinit var adapter: Useradapter
+    private lateinit var adapter: Donoradapter
 
 
     override fun onCreateView(
@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
         list = ArrayList()
-        adapter = Useradapter(this, list)
+        adapter = Donoradapter(this, list)
 
         db = FirebaseFirestore.getInstance()
 
@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
             val data = value?.toObjects(DonorModel::class.java)
             list.addAll(data!!)
 
-            binding.userRecyclerView.adapter = Useradapter(this, list)
+            binding.userRecyclerView.adapter = Donoradapter(this, list)
             adapter.updateData(list)
 
            adapter.updateData(list)
