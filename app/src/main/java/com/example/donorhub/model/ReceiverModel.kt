@@ -1,9 +1,8 @@
 package com.example.donorhub.model
 
-data class ReceiverModel (
+data class ReceiverModel(
     val id: String? = "",
     val name: String? = "",
-    val patientName:String?="",
     val contact: String? = "",
     val age:Int=0,
     val gender:String?="",
@@ -13,6 +12,7 @@ data class ReceiverModel (
     val district: String? = "",
     val email: String? = "",
     val password: String? = "",
+    val timestamp: com.google.firebase.Timestamp
 
 )
 

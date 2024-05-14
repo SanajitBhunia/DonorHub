@@ -1,22 +1,27 @@
 package com.example.donorhub.ui.auth
 
 import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.view.ViewParent
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.donorhub.databinding.PatientsDetailsBinding
+import com.example.donorhub.model.ReceiverModel
+import com.example.donorhub.ui.MainActivity2
 import com.example.donorhub.utils.AddressUtils
+import com.example.donorhub.utils.Config
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import java.text.FieldPosition
+import java.util.Date
 
 class PatientsDetails:AppCompatActivity() {
     private lateinit var binding: PatientsDetailsBinding
-    private lateinit var auth: FirebaseAuth
-    private  lateinit var db:FirebaseFirestore
+
+    lateinit var db: FirebaseFirestore
+    lateinit var auth: FirebaseAuth
 
     lateinit var gender:String
     lateinit var patientBlood:String
@@ -34,6 +39,14 @@ class PatientsDetails:AppCompatActivity() {
 
         db=FirebaseFirestore.getInstance()
         auth=FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+        val password = intent.getStringExtra("password")
+
+
+
+
+
+        //binding.postBtn.isEnabled=false
 
         val itemGender= arrayOf("Select Gender","Male","Female","Others")
         binding.spinnerGender.setAdapter(
@@ -187,6 +200,110 @@ class PatientsDetails:AppCompatActivity() {
         }
 
         )
+
+        binding.postBtn.setOnClickListener {
+            val patientname=binding.patientName.text.toString()
+            val contactNumber=binding.contactNum.text.toString()
+            val ageText=binding.patientAge.text.toString()
+            val patientage=ageText.toIntOrNull()?:0
+            val hospitalName=binding.HospitaName.text.toString()
+            val hospitaladdress=binding.hospitalAddress.text.toString()
+            val comments=binding.Comment.text.toString()
+
+
+            if(patientname.isEmpty()){
+                binding.patientName.setError("Please enter name")
+                binding.patientName.requestFocus()
+            }
+           else if(contactNumber.isEmpty()){
+                binding.contactNum.setError("Please enter a valid number")
+                binding.contactNum.requestFocus()
+            }
+            else if(contactNumber.length!=10){
+                binding.contactNum.setError("Phone number must be 10 digit")
+                binding.contactNum.requestFocus()
+            }
+            else if(ageText.isEmpty()){
+                binding.patientAge.setError("Please provide patient's age")
+                binding.patientAge.requestFocus()
+            }
+            else if(hospitalName.isEmpty()){
+                binding.HospitaName.setError("Please enter hospital name")
+                binding.HospitaName.requestFocus()
+            }
+            else if(hospitaladdress.isEmpty()){
+                binding.hospitalAddress.setError("Please enter hospital adress")
+                binding.hospitalAddress.requestFocus()
+            }
+            else if(gender.equals("Select Gender")){
+                Toast.makeText(this, "Please Provide Gender", Toast.LENGTH_SHORT).show()
+            }
+            else if(patientBlood.equals("Select Blood Group")){
+                Toast.makeText(this, "Please Provide Blood Group", Toast.LENGTH_SHORT).show()
+            }
+            else if(binding.spinnerBloodUnit.equals("Blood Units")){
+                Toast.makeText(this, "Please provide no of blood units", Toast.LENGTH_SHORT).show()
+            }
+            else if (binding.spinnerBloodUnit.selectedItemPosition == 0) {
+                Toast.makeText(this, "Please Select Blood Units", Toast.LENGTH_SHORT).show()
+            }else if (patientDivision.equals("Select Division")) {
+                Toast.makeText(this, "Please Provide Division", Toast.LENGTH_SHORT).show()
+            } else if (patientDistrict.equals("Select District")) {
+                Toast.makeText(this, "Please Provide District", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                binding.postBtn.isEnabled=true
+
+                val currentUserId = auth.currentUser!!.uid
+                val newDocumentRef = db.collection("Receiver").document()
+                val newDocumentId = newDocumentRef.id
+
+                val currentTimestamp = com.google.firebase.Timestamp(Date())
+
+                // Create a data object with user information
+                val data = ReceiverModel(
+                    currentUserId,
+                    patientname,
+                    contactNumber,
+                    patientage ,
+                    gender,
+                    patientBlood,
+                    units,
+                    patientDivision,
+                    patientDistrict,
+                    email = auth.currentUser!!.email ?: "",
+                    password =password,
+                    timestamp = currentTimestamp
+                )
+//                db.collection("Receiver").document(currentUserId).set(data, SetOptions.merge())
+//                    .addOnCompleteListener {
+//                        if(it.isSuccessful) {
+//                            startActivity(Intent(this, MainActivity2::class.java))
+//                            finish()
+//                            Toast.makeText(
+//                                this,
+//                                "Posted SuccessfulLy",
+//                                Toast.LENGTH_SHORT
+//                            ).show()
+//                        }
+                newDocumentRef.set(data)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            startActivity(Intent(this, MainActivity2::class.java))
+                            finish()
+                            Toast.makeText(
+                                this,
+                                "Posted Successfully",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        else{
+                            Config.hideDialog()
+                            Toast.makeText(this, "Unknown Error!! Please try again", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            }
+        }
 
 
     }

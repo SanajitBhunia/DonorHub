@@ -23,14 +23,17 @@ class Donor_receiver_activity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
 
 
+        val password = intent.getStringExtra("password")
 
 
         binding.btndonate.setOnClickListener {
+            intent.putExtra("password", password)
             checkUserData()
 
         }
         binding.btnrequest.setOnClickListener {
             startActivity(Intent(this,MainActivity2::class.java))
+            intent.putExtra("password", password)
         }
 
     }
