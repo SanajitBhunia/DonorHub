@@ -46,7 +46,7 @@ class DonorDetails : AppCompatActivity() {
         binding1= SiginUpBinding.inflate(layoutInflater)
         val currentUser = auth.currentUser
 
-        binding.saveBtn.isEnabled=false
+
 
 
         binding.verifyBtn1.setOnClickListener {
@@ -184,7 +184,7 @@ class DonorDetails : AppCompatActivity() {
             } else if (districts.equals("Select District")) {
                 Toast.makeText(this, "Please Provide District", Toast.LENGTH_SHORT).show()
             } else {
-                binding.saveBtn.isEnabled=true
+
 
 
                     val currentUserId = auth.currentUser!!.uid

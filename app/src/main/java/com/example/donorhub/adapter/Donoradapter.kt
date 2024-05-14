@@ -38,6 +38,7 @@ class Donoradapter(val context: HomeFragment, var list: ArrayList<DonorModel>) :
         holder.binding.userPhone.text = list[position].phone.toString()
 
 
+
         holder.binding.animationView.setOnClickListener {
             val phone = list[position].phone.toString()
             val intent = Intent()
