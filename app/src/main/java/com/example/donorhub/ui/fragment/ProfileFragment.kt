@@ -45,7 +45,8 @@ class ProfileFragment : Fragment() {
                 binding.userPhone.setText(currUser.phone.toString())
                 binding.userEmail.setText(currUser.email.toString())
                 binding.userBlood.setText(currUser.blood).toString()
-                binding.userAge.setText(currUser.age).toString()
+                binding.userAge.setText(currUser.age.toString())
+
 
                 Config.hideDialog()
 
