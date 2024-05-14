@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.donorhub.adapter.Useradapter
 import com.example.donorhub.databinding.FragmentHomeBinding
-import com.example.donorhub.model.UserModel
+import com.example.donorhub.model.DonorModel
 import com.example.donorhub.utils.Config
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var db: FirebaseFirestore
 
-    private lateinit var list: ArrayList<UserModel>
+    private lateinit var list: ArrayList<DonorModel>
     private lateinit var adapter: Useradapter
 
 
@@ -38,8 +38,8 @@ class HomeFragment : Fragment() {
 
         Config.showDialog(requireContext())
         db.collection("users").addSnapshotListener { value, error ->
-            val list = arrayListOf<UserModel>()
-            val data = value?.toObjects(UserModel::class.java)
+            val list = arrayListOf<DonorModel>()
+            val data = value?.toObjects(DonorModel::class.java)
             list.addAll(data!!)
 
             binding.userRecyclerView.adapter = Useradapter(this, list)
@@ -78,7 +78,7 @@ class HomeFragment : Fragment() {
 
 
     private fun updateRecylerView() {
-        val data = ArrayList<UserModel>()
+        val data = ArrayList<DonorModel>()
 
         for (item in list) {
 
