@@ -12,8 +12,8 @@ import com.example.donorhub.databinding.ItemUserBinding
 import com.example.donorhub.model.DonorModel
 import com.example.donorhub.ui.fragment.HomeFragment
 
-class Donoradapter(val context: HomeFragment, var list: ArrayList<DonorModel>) :
-    RecyclerView.Adapter<Donoradapter.UserViewHolder>() {
+class DonorAdapter(val context: HomeFragment, var list: ArrayList<DonorModel>) :
+    RecyclerView.Adapter<DonorAdapter.UserViewHolder>() {
 
     class UserViewHolder (val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root){
 

@@ -22,6 +22,7 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         auth = FirebaseAuth.getInstance()
         // After setContentView(binding.root)
