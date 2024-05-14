@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
@@ -99,10 +100,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.logout -> {
-                auth.signOut()
-                startActivity(Intent(this, LoginActivity::class.java))
-                Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show()
-                finish()
+                AlertDialog.Builder(this)
+                    .setTitle("Log Out")
+                    .setMessage("Are you sure you want to Logout?")
+                    .setPositiveButton("Log Out") { _, _ ->
+                        auth.signOut()
+                        startActivity(Intent(this, LoginActivity::class.java))
+                        Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                    .setNegativeButton("Cancel"){dialog,_->
+                       dialog.dismiss()
+
+                    }.show()
             }
         }
         return true
