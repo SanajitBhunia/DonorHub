@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.donorhub.R
 import com.example.donorhub.databinding.ActivityLoginBinding
-import com.example.donorhub.databinding.ActivityRegstionBinding
+import com.example.donorhub.databinding.DonorDetailsBinding
 import com.example.donorhub.databinding.OtpDialogueVerificationBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit
 class OTPActivity: AppCompatActivity() {
 
       private lateinit var binding: OtpDialogueVerificationBinding
-      private lateinit var binding1:ActivityRegstionBinding
+      private lateinit var binding1:DonorDetailsBinding
      lateinit var auth:FirebaseAuth
     private lateinit var  verificationId : String
 
@@ -33,7 +33,7 @@ class OTPActivity: AppCompatActivity() {
         setContentView(binding.root)
         //supportActionBar?.hide()
 
-        binding1 = ActivityRegstionBinding.inflate(layoutInflater)
+        binding1 =DonorDetailsBinding.inflate(layoutInflater)
 
         auth=FirebaseAuth.getInstance()
 

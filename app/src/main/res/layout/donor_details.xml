@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.RegstionActivity">
+    tools:context=".ui.auth.DonorDetails">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +24,9 @@
             app:lottie_fileName="reg.json"
             app:lottie_loop="true" />
 
+
+
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -36,7 +39,8 @@
                 android:drawableLeft="@drawable/person"
                 android:drawablePadding="12dp"
                 android:hint="Enter Your Name"
-                android:inputType="text" />
+                android:inputType="text"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,23 +72,44 @@
                     android:drawableLeft="@drawable/ic_phone"
                     android:drawablePadding="12dp"
                     android:hint="Enter Your Phone Number"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:padding="12dp"
+                    />
 
 
         </com.google.android.material.textfield.TextInputLayout>
 
 
 
-
-        <Spinner
-            android:id="@+id/spinnerBloodGroup"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            android:autofillHints="c"
-            android:background="@android:drawable/btn_dropdown"
-            android:gravity="center"
-            android:spinnerMode="dropdown" />
+            android:orientation="horizontal">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userAge"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:hint="Enter Your Age"
+                android:inputType="number"
+                android:gravity="center"
+               />
+
+            <Spinner
+                android:id="@+id/spinnerBloodGroup"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginStart="20dp"
+                android:autofillHints="c"
+                android:background="@android:drawable/btn_dropdown"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+        </LinearLayout>
 
 
 

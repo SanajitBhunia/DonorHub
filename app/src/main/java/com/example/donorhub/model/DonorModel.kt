@@ -5,6 +5,7 @@ data class DonorModel(
     val name: String? = "",
     val phone: String? = "",
     val blood: String? = "",
+    val age:Int=18,
     val division: String? = "",
     val district: String? = "",
     val email: String? = "",

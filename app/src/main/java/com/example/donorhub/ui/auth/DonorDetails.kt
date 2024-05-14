@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.donorhub.model.DonorModel
-import com.example.donorhub.databinding.ActivityRegstionBinding
+import com.example.donorhub.databinding.DonorDetailsBinding
 import com.example.donorhub.databinding.SiginUpBinding
 
 import com.example.donorhub.ui.MainActivity
@@ -20,9 +20,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 
 
-class RegstionActivity : AppCompatActivity() {
+class DonorDetails : AppCompatActivity() {
 
-    lateinit var binding: ActivityRegstionBinding
+    lateinit var binding: DonorDetailsBinding
     lateinit var binding1: SiginUpBinding
 
 
@@ -36,7 +36,7 @@ class RegstionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegstionBinding.inflate(layoutInflater)
+        binding = DonorDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
 
@@ -114,7 +114,7 @@ class RegstionActivity : AppCompatActivity() {
                 division = binding.spinnerDivsion.getSelectedItem().toString()
                 binding.spinnerDistricts.setAdapter(
                     ArrayAdapter(
-                        this@RegstionActivity,
+                        this@DonorDetails,
                         android.R.layout.simple_spinner_dropdown_item,
                         AddressUtils.getDistrict(division)
                     )
@@ -150,6 +150,8 @@ class RegstionActivity : AppCompatActivity() {
 
             val phone = binding.userPhone.text.toString()
             val name=binding.userName.text.toString()
+            val ageText = binding.userAge.text.toString()
+            val age = ageText.toIntOrNull() ?: 0
 
             if(name.isEmpty()){
                     binding.userName.setError("Please enter name")
@@ -160,6 +162,18 @@ class RegstionActivity : AppCompatActivity() {
             }  else if(phone.length!=10) {
                 binding.userPhone.setError("Number must be 10 digit")
                 binding.userPhone.requestFocus()
+            }
+                else if (ageText.isEmpty()){
+                binding.userAge.setError("Age must be between 18 to 65")
+                binding.userAge.requestFocus()
+            }
+                else if(age<18){
+                binding.userAge.setError("Invalid Age!!Age must be between 18 to 65")
+                binding.userAge.requestFocus()
+            }
+                else if(age>65){
+                binding.userAge.setError("Invalid Age!!Age must be between 18 to 65")
+                binding.userAge.requestFocus()
             }
                 else if (blood.equals("Select Blood Group")) {
                 Toast.makeText(this, "Please Provide Blood Group", Toast.LENGTH_SHORT).show()
@@ -181,13 +195,14 @@ class RegstionActivity : AppCompatActivity() {
                         name,
                         phone,
                         blood,
+                        age,
                         division,
                         districts,
                         email = auth.currentUser!!.email ?: "",
                         password=password
                     )
 
-                        db.collection("Donor").document(currentUserId).set(data,SetOptions.merge())
+                db.collection("Donor").document(currentUserId).set(data,SetOptions.merge())
                             .addOnCompleteListener {
                                 if(it.isSuccessful) {
                                     startActivity(Intent(this, MainActivity::class.java))

@@ -45,7 +45,7 @@ class Donor_receiver_activity : AppCompatActivity() {
                         startActivity(Intent(this, MainActivity::class.java))
                     } else {
                         // User data doesn't exist, navigate to registration activity
-                        startActivity(Intent(this, RegstionActivity::class.java))
+                        startActivity(Intent(this, DonorDetails::class.java))
                     }
                 }
                 .addOnFailureListener { exception ->

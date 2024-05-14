@@ -81,7 +81,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.auth.RegstionActivity"
+            android:name=".ui.auth.DonorDetails"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
