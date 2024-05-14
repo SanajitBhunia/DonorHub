@@ -13,9 +13,12 @@ import com.example.donorhub.model.ReceiverModel
 import com.example.donorhub.ui.MainActivity2
 import com.example.donorhub.utils.AddressUtils
 import com.example.donorhub.utils.Config
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.Date
+import java.text.SimpleDateFormat
+
+import java.util.Locale
 
 class PatientsDetails:AppCompatActivity() {
     private lateinit var binding: PatientsDetailsBinding
@@ -44,9 +47,6 @@ class PatientsDetails:AppCompatActivity() {
 
 
 
-
-
-        //binding.postBtn.isEnabled=false
 
         val itemGender= arrayOf("Select Gender","Male","Female","Others")
         binding.spinnerGender.setAdapter(
@@ -258,7 +258,8 @@ class PatientsDetails:AppCompatActivity() {
                 val newDocumentRef = db.collection("Receiver").document()
                 val newDocumentId = newDocumentRef.id
 
-                val currentTimestamp = com.google.firebase.Timestamp(Date())
+                val timestamp = Timestamp.now()
+               // val dateString = formatDate(timestamp)
 
                 // Create a data object with user information
                 val data = ReceiverModel(
@@ -269,12 +270,17 @@ class PatientsDetails:AppCompatActivity() {
                     gender,
                     patientBlood,
                     units,
+                    hospitalName,
+                    hospitaladdress,
                     patientDivision,
                     patientDistrict,
+                    reason,
+                    comments,
                     email = auth.currentUser!!.email ?: "",
                     password =password,
-                    timestamp = currentTimestamp
+                    timestamp =timestamp
                 )
+
 //                db.collection("Receiver").document(currentUserId).set(data, SetOptions.merge())
 //                    .addOnCompleteListener {
 //                        if(it.isSuccessful) {
@@ -307,4 +313,6 @@ class PatientsDetails:AppCompatActivity() {
 
 
     }
+
+
 }
