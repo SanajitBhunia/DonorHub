@@ -15,24 +15,26 @@
         android:orientation="vertical"
         android:padding="15dp">
 
-    <TextView
-        android:id="@+id/reciverName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textStyle="bold"
-        android:textAllCaps="true"
-        android:textColor="@color/lightRed"
-        android:textSize="35sp"
-        android:padding="10dp"/>
+        <TextView
+            android:id="@+id/reciverName"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:drawableLeft="@drawable/receivername"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/lightRed"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/reciverHospital"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hospital Name"
-        android:textSize="30sp"
-        android:padding="5dp"/>
+        <TextView
+            android:id="@+id/reciverHospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hospital Name"
+            android:layout_marginStart="50dp"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,10 +42,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hospital Address"
-                android:textSize="25sp"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Hospital"
+                android:textSize="30sp"
+                android:paddingTop="5dp"
+                android:textAlignment="center"
+                android:drawableLeft="@drawable/baseline_factory_24"
                 android:textStyle="bold"
                 android:textColor="@color/lightRed"/>
             <TextView
@@ -52,14 +57,14 @@
                 android:layout_height="wrap_content"
                 android:text="Hospital Address"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
             <TextView
                 android:id="@+id/receiverDistrict"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hospital District"
                 android:textSize="22sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
 
 
 
@@ -71,10 +76,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
                 android:text="Reason"
-                android:textSize="25sp"
+                android:drawableLeft="@drawable/baseline_emergency_24"
+                android:textSize="30sp"
+                android:paddingTop="5dp"
+                android:textAlignment="center"
                 android:textStyle="bold"
                 android:textColor="@color/lightRed"/>
             <TextView
@@ -83,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:text="reason"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
 
 
 
@@ -95,11 +103,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
                 android:text="Contact"
-                android:textSize="25sp"
+                android:textSize="30sp"
+                android:paddingTop="5dp"
+                android:drawableLeft="@drawable/baseline_contact_emergency"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 android:textColor="@color/lightRed"/>
             <TextView
                 android:id="@+id/receiverContact"
@@ -107,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:text="contact"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
 
 
 
@@ -119,11 +130,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
                 android:text="Blood Group"
-                android:textSize="25sp"
+                android:drawableLeft="@drawable/baseline_bloodtype_24"
+                android:textSize="30sp"
+                android:paddingTop="5dp"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 android:textColor="@color/lightRed"/>
             <TextView
                 android:id="@+id/receiverBloodGroup"
@@ -131,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="Blood Group"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
 
 
 
@@ -143,10 +157,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="230dp"
+                android:layout_height="60dp"
                 android:text="No of Units"
-                android:textSize="25sp"
+                android:textSize="30sp"
+                android:paddingTop="5dp"
+                android:drawableLeft="@drawable/baseline_ad_units_24"
+                android:textAlignment="center"
                 android:textStyle="bold"
                 android:textColor="@color/lightRed"/>
 
@@ -161,14 +178,14 @@
                 android:layout_height="wrap_content"
                 android:text="unit"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Units"
                     android:textSize="20sp"
-                    android:layout_marginStart="8dp"/>
+                    android:layout_marginStart="10dp"/>
             </LinearLayout>
 
 
@@ -181,11 +198,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
                 android:text="Age"
-                android:textSize="25sp"
+                android:textSize="30sp"
+                android:paddingTop="5dp"
+                android:drawableLeft="@drawable/baseline_calendar_month"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 android:textColor="@color/lightRed"/>
             <TextView
                 android:id="@+id/receiverAge"
@@ -193,7 +213,7 @@
                 android:layout_height="wrap_content"
                 android:text="Age"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
 
 
 
@@ -205,19 +225,22 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
                 android:text="Gender"
-                android:textSize="25sp"
+                android:paddingTop="5dp"
+                android:drawableLeft="@drawable/baseline_diversity_1_24"
+                android:textColor="@color/lightRed"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="@color/lightRed"/>
+                android:textAlignment="center"/>
             <TextView
                 android:id="@+id/receiverGender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gender"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
 
 
 
@@ -229,10 +252,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
                 android:text="Comments"
-                android:textSize="25sp"
+                android:paddingTop="5dp"
+                android:textAlignment="center"
+                android:drawableLeft="@drawable/baseline_edit_note_24"
+                android:textSize="30sp"
+
                 android:textStyle="bold"
                 android:textColor="@color/lightRed"/>
             <TextView
@@ -241,7 +268,7 @@
                 android:layout_height="wrap_content"
                 android:text="Comments"
                 android:textSize="20sp"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="50dp"/>
 
             <Button
                 android:id="@+id/btnCall"
