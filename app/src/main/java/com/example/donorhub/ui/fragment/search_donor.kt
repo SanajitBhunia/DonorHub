@@ -37,6 +37,7 @@ class search_donor : Fragment() {
 
         db = FirebaseFirestore.getInstance()
 
+
         Config.showDialog(requireContext())
         db.collection("Receiver").addSnapshotListener { value, error ->
             val list = arrayListOf<ReceiverModel>()

@@ -258,13 +258,14 @@ class PatientsDetails:AppCompatActivity() {
 
                 val currentUserId = auth.currentUser!!.uid
                 val newDocumentRef = db.collection("Receiver").document()
-                val newDocumentId = newDocumentRef.id
+
 
                 val timestamp = Timestamp.now()
-               // val dateString = formatDate(timestamp)
+
 
                 // Create a data object with user information
                 val data = ReceiverModel(
+
                     currentUserId,
                     patientname,
                     contactNumber,
@@ -283,17 +284,6 @@ class PatientsDetails:AppCompatActivity() {
                     timestamp =timestamp
                 )
 
-//                db.collection("Receiver").document(currentUserId).set(data, SetOptions.merge())
-//                    .addOnCompleteListener {
-//                        if(it.isSuccessful) {
-//                            startActivity(Intent(this, MainActivity2::class.java))
-//                            finish()
-//                            Toast.makeText(
-//                                this,
-//                                "Posted SuccessfulLy",
-//                                Toast.LENGTH_SHORT
-//                            ).show()
-//                        }
                 newDocumentRef.set(data)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {

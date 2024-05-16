@@ -62,7 +62,10 @@ RecyclerView.Adapter<ReceiverAdapter.UserViewHolder>(){
             context.startActivity(intent)
         }
         holder.binding.patientsDetails.setOnClickListener {
+
             val intent = Intent(context.requireContext(), ReceiverDetails::class.java)
+            val id=list[position].id
+            intent.putExtra("receiverId",id )
             context.startActivity(intent)
 
         }

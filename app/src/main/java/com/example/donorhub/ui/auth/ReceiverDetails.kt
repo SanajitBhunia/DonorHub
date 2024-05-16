@@ -26,18 +26,21 @@ class ReceiverDetails : AppCompatActivity() {
 
 
         val receiverId = intent.getStringExtra("receiverId")
-        Toast.makeText(this, "$receiverId", Toast.LENGTH_SHORT).show()
-        val newDocumentRef = db.collection("Receiver").document()
-        val newDocumentId = newDocumentRef.id
+
+
+
 
         // Check if receiverId is not null
         if (receiverId != null) {
             // Fetch receiver details from Firestore
-            db.collection("Receiver").document(newDocumentId)
+            val collectionRef = db.collection("Receiver")
+
+            collectionRef.whereEqualTo("id", "$receiverId")
                 .get()
-                .addOnSuccessListener { documentSnapshot ->
-                    if (documentSnapshot.exists()) {
-                        val receiver = documentSnapshot.toObject(ReceiverModel::class.java)
+
+                .addOnSuccessListener { querySnapshot ->
+                    for (document in querySnapshot.documents) {
+                        val receiver = document.toObject(ReceiverModel::class.java)
                         if (receiver != null) {
                             // Populate UI with receiver details
                             binding.reciverName.text=receiver.name.toString()
@@ -63,7 +66,7 @@ class ReceiverDetails : AppCompatActivity() {
                     }
                 }
                 .addOnFailureListener { exception ->
-                    // Handle failure to fetch receiver details
+
                 }
         }
     }
