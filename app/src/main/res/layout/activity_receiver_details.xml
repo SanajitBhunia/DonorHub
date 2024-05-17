@@ -14,17 +14,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <TextView
             android:id="@+id/reciverName"
             android:layout_width="200dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:drawableLeft="@drawable/receivername"
             android:text="Name"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/lightRed"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -32,9 +36,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="Hospital Name"
+            android:hint="Hospital Name"
             android:layout_marginStart="50dp"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,14 +60,14 @@
                 android:id="@+id/receiverHospital"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hospital Address"
-                android:textSize="20sp"
+                android:hint="Hospital Address"
+                android:textSize="22sp"
                 android:layout_marginStart="50dp"/>
             <TextView
                 android:id="@+id/receiverDistrict"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hospital District"
+                android:hint="Hospital District"
                 android:textSize="22sp"
                 android:layout_marginStart="50dp"/>
 
@@ -90,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="reason"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:layout_marginStart="50dp"/>
 
 
@@ -117,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="contact"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:layout_marginStart="50dp"/>
 
 
@@ -144,7 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Blood Group"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:layout_marginStart="50dp"/>
 
 
@@ -212,7 +217,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Age"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:layout_marginStart="50dp"/>
 
 

@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.donorhub.R
-import com.example.donorhub.adapter.DonorAdapter
 import com.example.donorhub.adapter.ReceiverAdapter
 import com.example.donorhub.databinding.FragmentSearchDonorBinding
 import com.example.donorhub.model.DonorModel
