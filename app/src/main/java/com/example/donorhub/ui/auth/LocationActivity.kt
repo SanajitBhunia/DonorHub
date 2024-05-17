@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.donorhub.R
@@ -98,6 +99,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMa
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 setUpMap() // Permission granted, proceed to set up the map
             } else {
+                Toast.makeText(this,"Location is off", Toast.LENGTH_SHORT).show()
                 // Permission denied, handle accordingly (e.g., show a message or disable location features)
             }
         }

@@ -59,7 +59,7 @@ class DonorDetails : AppCompatActivity() {
                 Toast.makeText(this,"Enter a Valid 10 digits Phone Number ",Toast.LENGTH_LONG).show()
             }
             else{
-                var intent=Intent(this,OTPActivity::class.java)
+                val intent=Intent(this,OTPActivity::class.java)
                 intent.putExtra("number",phone)
                 startActivity(intent)
 

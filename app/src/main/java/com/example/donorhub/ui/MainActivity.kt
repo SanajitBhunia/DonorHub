@@ -94,8 +94,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if (intent.resolveActivity(packageManager) != null) {
                     startActivity(intent)
                 } else {
-                    // Handle case where Google Maps app is not installed
-                    // You can open a web browser or inform the user to install Google Maps
+
                 }
             }
 

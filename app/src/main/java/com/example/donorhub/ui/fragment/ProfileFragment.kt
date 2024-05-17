@@ -2,6 +2,7 @@ package com.example.donorhub.ui.fragment
 
 import android.os.Bundle
 import android.provider.SyncStateContract.Helpers.update
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -84,47 +85,75 @@ class ProfileFragment : Fragment() {
             .create()
 
         btnUpdate.setOnClickListener {
-            val newName = edtName.text.toString()
-            val newAge = edtAge.text.toString().toIntOrNull() ?: 0 // Convert age string to int
+            val newName = edtName.text.toString().trim()
+            val newAge = edtAge.text.toString().toIntOrNull() ?: -1 // Use -1 as an invalid age indicator
 
-            if (newName.isNotBlank() ){
-                if(newAge in 18..65) {
-                    val selectedBloodGroup = spinnerBloodGroup.selectedItem.toString()
+            val selectedBloodGroup = spinnerBloodGroup.selectedItem.toString()
 
-                    // Perform update operation
-                    db.collection("Donor").document(auth.currentUser!!.uid)
-                        .update(
-                            mapOf(
-                                "name" to newName,
-                                "age" to newAge,
-                                "blood" to selectedBloodGroup
-                            )
-                        )
-                        .addOnSuccessListener {
-                            Toast.makeText(
-                                requireContext(),
-                                "Profile updated successfully",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            alertDialog.dismiss()
-                            // Update local user object and UI if needed
+            // Map to store the updates
+            val updates = mutableMapOf<String, Any>()
 
+            // Add fields to update map only if they are valid
+            if (newName.isNotBlank()) {
+                updates["name"] = newName
+            }
+            if (newAge in 18..65) {
+                updates["age"] = newAge
+            }
+            if (selectedBloodGroup.isNotBlank()) {
+                updates["blood"] = selectedBloodGroup
+            }
+
+            if (updates.isNotEmpty()) {
+                // Perform update operation
+                db.collection("Donor").document(auth.currentUser!!.uid)
+                    .update(updates)
+                    .addOnSuccessListener {
+                        Toast.makeText(
+                            requireContext(),
+                            "Profile updated successfully",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        alertDialog.dismiss()
+
+                        // Update local user object and UI
+                        updates.forEach { (key, value) ->
+                            when (key) {
+                                "name" -> {
+                                    // Update your local user object and UI here, e.g., user.name = value as String
+                                    currUser.name = value as String
+                                    binding.userName.text = currUser.name!!.toEditable()
+                                }
+                                "age" -> {
+                                    // Update your local user object and UI here, e.g., user.age = value as Int
+                                    currUser.age=value as Int
+                                    binding.userAge.text=currUser.age.toString().toEditable()
+                                }
+                                "blood" -> {
+                                    // Update your local user object and UI here, e.g., user.bloodGroup = value as String
+                                    currUser.blood=value as String
+                                    binding.userBlood.text= currUser.blood!!.toEditable()
+                                }
+                            }
                         }
-                        .addOnFailureListener { e ->
-                            Toast.makeText(
-                                requireContext(),
-                                "Failed to update profile: ${e.message}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                }
+
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(
+                            requireContext(),
+                            "Failed to update profile: ${e.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
             } else {
-                Toast.makeText(requireContext(), "The donors age should be between 18 to 65 ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Please fill at least one detail to update", Toast.LENGTH_SHORT).show()
             }
         }
 
+
         alertDialog.show()
     }
+    private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 
 
 }

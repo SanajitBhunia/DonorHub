@@ -2,10 +2,10 @@ package com.example.donorhub.model
 
 data class DonorModel(
     val id: String? = "",
-    val name: String? = "",
+    var name: String? = "",
     val phone: String? = "",
-    val blood: String? = "",
-    val age:Int=18,
+    var blood: String? = "",
+    var age:Int=18,
     val division: String? = "",
     val district: String? = "",
     val email: String? = "",
